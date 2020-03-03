@@ -1,0 +1,37 @@
+#VRML V2.0 utf8
+#DEF DIS Display{
+#children[
+	DEF SCENE Dynamic{
+		children Shape{
+			appearance Appearance{
+				material Material { diffuseColor 1 1 1 }
+				texture ImageTexture { url "urn:micole/vrml/textures/marsmap.jpg" }
+				surface BumpmapSurface {
+					stoppingFriction 0.01
+					startingFriction 0.05
+					dynamicFriction 0.01
+					bumpHeight 0.005
+					stiffness 600
+					texture ImageTexture { url "urn:micole/vrml/textures/marsbump.jpg" }
+				}
+			}
+			geometry IndexedFaceSet{
+				coord Coordinate {
+					point [ -0.3  0.2 0,
+							-0.3 -0.2 0,
+							 0.3 -0.2 0,
+							 0.3  0.2 0
+				    ]
+			  	}
+			  	coordIndex [0,1,2,3]
+		    }
+		}
+	}
+
+#] }#DISPLAY
+
+DEF SCRIPT PythonScript{
+   url "urn:micole/vrml/planets.py"
+   references [ USE SCENE ]
+}
+

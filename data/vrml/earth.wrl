@@ -1,0 +1,345 @@
+#VRML V2.0 utf8
+#DEF DIS Display{
+	#children[
+	DEF SCENE Dynamic{
+		#scale 1.2 1.2 1.2
+		#rotation 0 1 0 -1.7
+		#rotation 0 0 1 -0.2
+		rotation 1 0 0 0.3
+		translation 0 0 -0.03
+		children [
+			################################################################
+			#
+      		# Maapallo
+      		#
+      		###############################################################
+			DEF MAA_TRANSFORM Transform{
+#				rotation 1 0 0 0.4
+				children [
+					DEF Maa Shape {
+						appearance Appearance {
+							material Material { diffuseColor 1 1 1 }
+							texture ImageTexture { url "urn:micole/vrml/textures/earth.png" }
+							surface BumpmapSurface {
+								 stoppingFriction 0.01
+								 startingFriction 0.05
+								 dynamicFriction 0.01
+								 bumpHeight 0.007
+								 stiffness 600
+								 texture ImageTexture { url "urn:micole/vrml/textures/earth_bump.png" }
+							}
+						}
+						geometry Sphere {
+							radius 0.05
+							#radius 0.08
+							#depth 1
+						}
+					}#Maa Shape
+					##############################
+					# Afrikka-magneetti          #
+					##############################
+					DEF AfrikkaT Transform{
+						translation 0.02 0.004 0.045
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF AFRIKKA_M Magnet{
+						 		stiffness 0
+								 startDistance 0.02
+								 effectDistance 0.02
+							}
+						]
+					}
+					##############################
+					# Tyyni Valtameri1 -magneetti #
+					##############################
+					DEF TyyniV1 Transform{
+				 		translation -0.005 0.02 -0.045
+				 		children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF TYYNIV_M1 Magnet{
+								stiffness 0
+								startDistance 0.04
+								effectDistance 0.04
+							}
+						]
+					}
+					##############################
+					# Tyyni Valtameri2 -magneetti #
+					##############################
+					DEF TyyniV2 Transform{
+						translation -0.03 -0.03 -0.025
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF TYYNIV_M2 Magnet{
+								stiffness 0
+								startDistance 0.04
+								effectDistance 0.04
+							}
+						]
+					}
+					##############################
+					# Atlanti1 -magneetti        #
+					##############################
+					DEF Atlanti1 Transform{
+						translation -0.03 0.026 0.03
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF ATLANTI_M1 Magnet{
+								stiffness 0
+								startDistance 0.03
+								effectDistance 0.03
+							}
+						]
+					}
+					##############################
+					# Atlanti2 -magneetti        #
+					##############################
+					DEF Atlanti2 Transform{
+						translation -0.01 -0.02 0.045
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF ATLANTI_M2 Magnet{
+								stiffness 0
+								startDistance 0.03
+								effectDistance 0.03
+							}
+						]
+					}
+					##########################
+					# Eurooppa-magneetti     #
+					##########################
+					DEF EurooppaT Transform {
+						translation 0.008 0.04 0.028
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF EUROOPPA_M Magnet{
+								stiffness 0
+								startDistance 0.02
+								effectDistance 0.02
+							}
+						]
+					}
+					##########################
+					# Suomi-magneetti        #
+					##########################
+					DEF SuomiT Transform {
+						translation 0.01 0.045 0.018
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF SUOMI_M Magnet{
+								stiffness 0
+								startDistance 0.005
+								effectDistance 0.005
+							}
+						]
+     				}
+					##########################
+					# Pohjoisnapa-magneetti  #
+					##########################
+					DEF PohjoisnapaT Transform {
+						translation 0 0.05 0
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF POHJOISNAPA_M Magnet{
+								stiffness 0
+							}
+						]
+					}
+					########################
+					# Etelänapa-magneetti  #
+					########################
+					DEF EtelanapaT Transform{
+						translation 0 -0.05 0
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.001}
+#							}
+							DEF ETELANAPA_M Magnet{
+								stiffness 0
+								startDistance 0.02
+								effectDistance 0.02
+							}
+						]
+					}
+					########################
+					# Australia magneetti  #
+					########################
+					DEF AustraliaT Transform{
+						translation 0.031 -0.022 -0.031
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.01}
+#							}
+							DEF AUSTRALIA_M Magnet{
+								stiffness 0
+								startDistance 0.01
+								effectDistance 0.01
+							}
+						]
+					}
+					########################
+					# Aasia magneetti      #
+					########################
+					DEF AsiaT Transform{
+						translation 0.03 0.032 0
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.02}
+#							}
+							DEF ASIA_M Magnet{
+								stiffness 0
+								startDistance 0.02
+								effectDistance 0.02
+							}
+						]
+					}
+					###############################
+					# Pohjois-amerikka magneetti  #
+					###############################
+					DEF PAmerikkaT Transform{
+						translation -0.031 0.032 -0.005
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.015}
+#							}
+							DEF PAMERIKKA_M Magnet{
+								stiffness 0
+								startDistance 0.015
+								effectDistance 0.015
+							}
+						]
+					}
+					###############################
+					# Etelä-amerikka magneetti    #
+					###############################
+					DEF EAmerikkaT Transform{
+						translation -0.04 -0.01 0.022
+						children [
+#							Shape{
+#								appearance Appearance{
+#									material Material{ diffuseColor 1 0 0 }
+#								}
+#								geometry Sphere{radius 0.015}
+#							}
+							DEF EAMERIKKA_M Magnet{
+								stiffness 0
+								startDistance 0.015
+								effectDistance 0.015
+							}
+						]
+					}
+				]
+			}
+
+			###################################################################################
+			#
+			# KUU
+			#
+			####################################################################################
+			DEF KUU_TRANSFORM Transform {
+				translation 0.1 0 0
+				children[
+					DEF KUU Shape {
+						appearance Appearance {
+							material Material{ diffuseColor 1 1 1 }
+							texture ImageTexture { url "urn:micole/vrml/textures/moon.png" }
+							surface BumpmapSurface {
+								stoppingFriction 0.01
+								startingFriction 0.02
+								dynamicFriction 0.01
+								bumpHeight 0.005
+								stiffness 600
+								texture ImageTexture { url "urn:micole/vrml/textures/moon.png" }
+							}
+						}
+						geometry Sphere { radius 0.005 }
+					}
+					##################
+					# Kuu magneetti  #
+					##################
+					DEF KUU_M Magnet{
+						stiffness 0
+						startDistance 0.005
+					}
+				]
+			}
+
+			DEF GRAVITY_M Magnet{
+				stiffness 0
+				effectDistance 0.5
+				startDistance 0.5
+			}
+		]
+
+	}#SCENE
+#	]#children
+#}#DISPLAY
+
+DEF SIP ScalarInterpolator{
+	key [ 0 0.035 0.055 0.08 0.15 ]
+	keyValue [ 0 0 10 5 0 ]
+}
+
+
+DEF SCRIPT PythonScript{
+    url "urn:micole/vrml/earth.py"
+	references [ USE SCENE USE MAA_TRANSFORM, USE AFRIKKA_M, USE TYYNIV_M1,
+                 USE TYYNIV_M2, USE ATLANTI_M1, USE ATLANTI_M2,
+                 USE EUROOPPA_M, USE POHJOISNAPA_M, USE ETELANAPA_M,
+                 USE AUSTRALIA_M, USE ASIA_M, USE PAMERIKKA_M, USE EAMERIKKA_M,
+				 USE GRAVITY_M, USE SIP, USE SUOMI_M, USE KUU_M ]
+
+}
+

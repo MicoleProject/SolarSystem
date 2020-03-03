@@ -1,0 +1,446 @@
+#VRML V2.0 utf8
+#DEF DIS Display {
+#   children[
+
+
+DEF SCENE Transform{
+
+   #DEF DIS Display {
+   children[
+		#SimpleMsgNode{
+		#	ready FALSE
+		#}
+
+      #DEF SOURCE_1 SoundSource { buffer DEF BUFFER_1 SoundBuffer{ url "wav/silence_1sec.wav"}}
+# --------------------------------------------------
+      Transform{
+	 translation 0 0 0.080
+	 children [
+	    Shape{
+	       appearance Appearance{
+		  material Material { diffuseColor 0 0 1 }
+		  surface FrictionalSurface{}
+	       }
+	       geometry IndexedFaceSet{
+		  coord Coordinate {
+		     point [ -0.25 0.15 0,
+			     0.25 0.15 0,
+			     0.25 -0.15 0,
+			     -0.25 -0.15 0
+			    ]
+		  }
+		  coordIndex [0,1,2,3]
+	       }
+	    }
+	   ]
+      }
+# --------------------------------------------------
+
+      Transform {
+	 scale 0.3 0.3 0.3
+	 translation 0 0 -0.3
+	 children[
+
+	    Shape {
+	       	geometry Panel {}
+	       	appearance Appearance {
+		 		texture ImageTexture {
+		   		#url "textures/milkyway.png"
+				#url "c:\\janne\\SolarSystemTest\\SolarSystemTest\\data\\vrml\\textures\\milkyway.png"
+				}
+		  		material Material{ diffuseColor 0 0 0  }
+	     	}
+		}
+	   ]
+      }
+      Transform {
+	 #scale 0.0045 0.0045 0.0045
+	 scale 0.003 0.003 0.003
+	 #rotation 0 0 1 0.4
+	 children [
+	    Shape {
+	       #geometry Box {
+	       #   size 64 64 0
+	       #
+	       #}
+	       geometry IndexedFaceSet{
+		  coord Coordinate { point [32 32 0, -32 32 0, -32 -32 0, 32 -32 0 ]}
+		  coordIndex [0,1,2,3]
+	       }
+	       appearance Appearance {
+		  surface DEF BUMP_BUTTON  ButtonBumpmapSurface {
+		     #clickForce 5
+		     texture ImageTexture {
+
+
+			url "urn:micole/vrml/textures/solar-bmp_uusi_inverse.png"
+			#url "..\\..\\data\\vrml\\textures\\solar-bmp_uusi_inverse.png"
+			#url "c:\\janne\\SolarSystemTest\\SolarSystemTest\\data\\vrml\\textures\\solar-bmp_uusi_inverse.png"
+		     }
+		     bumpHeight 0.003
+		  }
+		  material Material {
+		     diffuseColor 1 1 1
+		     transparency 0.7
+		     #diffuseColor 0 0 0
+		  }
+		  texture ImageTexture {
+
+
+		     url "urn:micole/vrml/textures/radat_uusi.png"
+		     #url "..\\..\\data\\vrml\\textures\\radat_uusi.png"
+		     #url "c:\\janne\\SolarSystemTest\\SolarSystemTest\\data\\vrml\\textures\\radat_uusi.png"
+		  }
+	       }
+	    }
+	    Shape {
+	       geometry IndexedFaceSet{
+		  coord Coordinate { point [32 32 0, 32 -32 0, 72 -32 0, 72 32 0 ]}
+		  coordIndex [0,1,2,3]
+	       }
+	       appearance Appearance{
+		  material Material {diffuseColor 1 0 0 transparency 1}
+		  surface SimpleSurface{}
+	       }
+	    }
+	    Shape {
+	       geometry IndexedFaceSet{
+		  coord Coordinate { point [-32 32 0, -72 32 0, -72 -32 0, -32 -32 0 ]}
+		  coordIndex [0,1,2,3]
+	       }
+	       appearance Appearance{
+		  material Material {diffuseColor 1 0 0 transparency 1}
+		  surface SimpleSurface{}
+	       }
+	    }
+	    Shape {
+	       geometry IndexedFaceSet{
+		  coord Coordinate { point [32 32 0, 32 62 0,  -32 62 0, -32 32 0 ]}
+		  coordIndex [0,1,2,3]
+	       }
+	       appearance Appearance{
+		  material Material {diffuseColor 1 0 0 transparency 1}
+		  surface SimpleSurface{}
+	       }
+	    }
+	    Shape {
+	       geometry IndexedFaceSet{
+		  coord Coordinate { point [-32 -32 0, -32 -62 0, 32 -62 0, 32 -32 0 ]}
+		  coordIndex [0,1,2,3]
+	       }
+	       appearance Appearance{
+		  material Material {diffuseColor 1 0 0 transparency 1}
+		  surface SimpleSurface{}
+	       }
+	    }
+	    #Aurinko
+	    Transform {
+	       children [
+		  Shape {
+		     geometry Sphere {radius 4}
+		     appearance Appearance {
+			surface SimpleSurface {}
+			material Material {
+			   diffuseColor 1 1 0
+			}
+		     }
+		  }
+		  DEF SUN_M Magnet{
+		     startDistance 0.018
+		     effectDistance 0.018
+		     stiffness 20
+		  }
+		 ]
+	    }
+	    #Merkurius
+	    Transform {
+	       translation 10.3 0 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 0.5}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   diffuseColor 0.9 0.9 0.9
+			}
+		     }
+
+
+		  }
+
+		  DEF MERCURY_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 150
+		  }
+
+
+
+		  #Transform{
+		  #  translation 0 0 -0.45
+		  #  rotation 1 0 0 1.57
+		  #  children[
+		  #
+		  #Nappi Shape
+		  #     Shape {
+
+		  #	geometry Cylinder {height 1 radius 0.7}
+		  #	appearance Appearance{
+		  #
+		  #	   surface DEF BUTTON_3 ButtonFrictionalSurface{
+		  #
+		  #
+		  #	   }
+		  #	   material Material{
+		  #
+		  #	      transparency 1
+		  #	   }
+		  #
+		  #	}
+		  #     }
+		  #    ]
+		  #}
+
+
+		 ]
+	    }
+	    #DEF MERCURY_ORBIT Transform{
+	    #   scale 0.65 0.83 1
+	    #   translation 0 0 1
+	    #   children[
+	    #      DEF ORBIT Inline{
+	    #	  #url "nav-vrml/kiertorata.wrl"
+	    #	  url "vrml/mercury_orbit.wrl"
+	    #      }
+	    #
+	    #     ]
+	    #}
+
+	    #Venus
+	    Transform {
+	       translation -6.6 -7.1 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   diffuseColor 1 0.5 0.3
+			}
+		     }
+		  }
+		  DEF VENUS_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+		  }
+
+
+
+		 ]
+	    }
+
+
+	    ###################################################################
+	    #
+	    # MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!
+	    #
+	    ##################################################################
+	    Transform {
+	       translation 0 10.1 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1}
+		     appearance Appearance {
+			#surface DEF ROUTE1 ButtonFrictionalSurface {}
+			material Material {
+			   diffuseColor 0 0 0.7
+			   #transparency 1
+			}
+		     }
+		  }
+		  DEF EARTH_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+		  }
+
+		 ]
+	    }
+
+	    #Mars
+	    Transform {
+	       translation 13 -7.8 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 0.8}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   diffuseColor 1 0.8 0.3
+			}
+		     }
+		  }
+		  DEF MARS_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+
+		  }
+		 ]
+	    }
+
+	    #Jupiter
+	    Transform 	{
+	       translation 9 12 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1.5}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   diffuseColor 0.7 0.8 0.8
+			   #transparency 1
+
+			}
+		     }
+		  }
+		  DEF JUPITER_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+		  }
+		 ]
+	    }
+
+	    #Saturnus
+	    Transform {
+	       translation -13 12.3 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1.5}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+
+			   diffuseColor 1 0.8 0.6
+			   #transparency 1
+			}
+		     }
+		  }
+		  DEF SATURN_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+		  }
+		 ]
+	    }
+
+
+
+	    #Uranus
+	    Transform {
+	       translation 23.4 4.5 0
+
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1.1}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   #transparency 1
+			   diffuseColor 0.8 0.7 0.8
+
+
+			}
+		     }
+		  }
+		  DEF URANUS_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 200
+		  }
+		 ]
+	    }
+
+	    #Neptunus
+	    Transform {
+	       translation -22 -10.5 0
+
+	       children [
+		  Shape {
+		     geometry Sphere {radius 1.1}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   #transparency 1
+			   diffuseColor 0.7 0.8 1
+			}
+		     }
+		  }
+		  DEF NEPTUNE_M Magnet {
+		     startDistance 0.003
+		     effectDistance 0.007
+		     stiffness 150
+		  }
+		 ]
+	    }
+
+	    #Pluto
+	    DEF PLUTO Transform {
+	       translation 15 -17.5 0
+	       children [
+		  Shape {
+		     geometry Sphere {radius 0.5}
+		     appearance Appearance {
+			#surface RoughSurface {}
+			material Material {
+			   diffuseColor 1 1 1
+			   #transparency 1
+			}
+		     }
+		  }
+		  Transform{
+		     #translation 0 0 0.5
+		     children[
+			DEF PLUTO_M Magnet {
+			   startDistance 0.003
+			   effectDistance 0.007
+			   stiffness 150
+			}
+		       ]
+		  }
+		 ]
+	    }
+
+
+	   ]
+
+      }
+      DEF TIMER TimeSensor {
+	 	cycleInterval 1
+	 	loop TRUE
+      }
+
+     ]}#SCENE
+#]}#DISPLAY
+DEF SCRIPT PythonScript{
+   url "urn:micole/vrml/kokeilu2.py"
+   #url "..\\..\\data\\vrml\\kokeilu2.py"
+   #url "c:\\janne\\micole_cvs\\micole\\solarsystem\\data\\vrml\\kokeilu2.py"
+   references [ USE TIMER, USE SUN_M, USE MERCURY_M, USE VENUS_M,
+		USE EARTH_M, USE MARS_M, USE JUPITER_M USE SATURN_M,
+		USE URANUS_M, USE NEPTUNE_M, USE PLUTO_M, USE BUMP_BUTTON ]
+}
+
+
+
+
+#DEF LOCATOR PythonScript {
+#   url "../../vrml/locator.py"
+#   references [USE LOCATOR]
+#}
+
+
+
+

@@ -1,0 +1,39 @@
+#VRML V2.0 utf8
+#DEF DIS Display{
+#children[
+	DEF SCENE Dynamic{
+		children Shape{
+			appearance Appearance{
+				material Material { 
+					diffuseColor 1 1 1
+					transparency 0.1
+				}
+				texture ImageTexture { url "urn:micole/vrml/textures/jupitermap.jpg" }
+				surface VibratingSurface {
+					amplitude  0.2 0.2
+					frequency  0.5 0.5
+					phase  0 90
+					stiffness 10
+					damping  0
+				}
+			}
+			geometry IndexedFaceSet{
+				coord Coordinate {
+					point [ -0.3  0.2 0,
+							-0.3 -0.2 0,
+							 0.3 -0.2 0,
+							 0.3  0.2 0
+				    ]
+			  	}
+			  	coordIndex [0,1,2,3]
+		    }
+		}
+	}
+
+#] }#DISPLAY
+
+DEF SCRIPT PythonScript{
+   url "urn:micole/vrml/planets.py"
+   references [ USE SCENE ]
+}
+
